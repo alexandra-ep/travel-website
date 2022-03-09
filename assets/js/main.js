@@ -119,7 +119,43 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
+/*======= DARK LIGHT THEME =======*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const iconTheme = "ri-sun-line";
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+// Obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  document.body.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line";
+
+// Validate if the user previously chose a topic
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
+    iconTheme
+  );
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener("click", () => {
+  // Add/remove the dark/icon theme
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+  // Save the theme and the current icon that the user chose
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selectedicon", getCurrentIcon());
+});
+
 /*======= SCROLL REVEAL ANIMATION =======*/
+/*
 const sr = ScrollReveal({
   distance: "60px",
   duration: 2800,
@@ -157,5 +193,4 @@ sr.reveal(
     interval: 100,
   }
 );
-
-/*======= DARK LIGHT THEME =======*/
+*/
