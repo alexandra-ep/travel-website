@@ -245,6 +245,22 @@ input {
     color: var(--title-color);
 }
 
+/*======= Active link =======*/
+.active-link {
+    position: relative;
+    color: var(--title-color);
+}
+
+.active-link::before {
+    content: "";
+    position: absolute;
+    background-color: var(--title-color);
+    width: 100%;
+    height: 2px;
+    bottom: -.75rem;
+    left: 0;
+}
+
 /*======= HOME =======*/
 .home__img {
     position: absolute;
@@ -652,3 +668,103 @@ input {
 }
 
 /*======= FOOTER =======*/
+.footer__container {
+    row-gap: 5rem;
+}
+
+.footer__content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    row-gap: 2rem;
+}
+
+.footer__title,
+.footer__subtitle {
+    font-size: var(--h3-font-size);
+}
+
+.footer__title {
+    margin-bottom: var(--mb-0-5);
+}
+
+.footer__description {
+    margin-bottom: var(--mb-2);
+}
+
+.footer__social {
+    font-size: 1.25rem;
+    color: var(--title-color);
+    margin-right: var(--mb-1-25);
+}
+
+.footer__subtitle {
+    margin-bottom: var(--mb-1);
+}
+
+.footer__item {
+    margin-bottom: var(--mb-0-75);
+}
+
+.footer__link {
+    color: var(--text-color);
+}
+
+.footer__link:hover {
+    color: var(--title-color);
+}
+
+.footer__rights {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+}
+
+.footer__copy,
+.footer__terms-link {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.footer__terms {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer__terms-link:hover {
+    color: var(--text-color);
+}
+
+/*======= SCROLL UP =======*/
+.scrollup {
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--first-color);
+    padding: .5rem;
+    display: flex;
+    opacity: .9;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+}
+
+.scrollup__icon {
+    color: var(--white-color)
+}
+
+.scrollup:hover {
+    background-color: var(--first-color-alt);
+    opacity: 1;
+}
+
+/*======= Show scroll =======*/
+.show-scroll {
+    bottom: 5rem;
+}
+
+/*======= SCROLL BAR =======*/
+
+/*======= MEDIA QUERIES =======*/
+/*======= Small devices =======*/
+/*======= Medium devices =======*/
+/*======= Large devices =======*/
